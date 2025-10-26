@@ -66,3 +66,9 @@ def init_game() -> dict:
             "player2":player2
         }
     
+def play_round(player_1: dict, player_2: dict)-> None:
+    p1_card = player_1["hand"].pop()
+    p2_card = player_2["hand"].pop()
+    result_compare = compare_cards(p1_card,p2_card)
+    if result_compare =="p1":
+        player_1["won_pile"].append
