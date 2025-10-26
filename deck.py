@@ -72,3 +72,18 @@ def play_round(player_1: dict, player_2: dict)-> None:
     result_compare = compare_cards(p1_card,p2_card)
     if result_compare =="p1":
         player_1["won_pile"].append
+        
+if __name__ == "__main__":
+    game_dict = init_game()
+    while len(game_dict["player_1"]["hand"]) > 0 and len(game_dict["player_2"]["hand"]) > 0:
+        play_round(game_dict["player_1"],game_dict["playe   r_2"])
+        
+def return_winner(p1_won_pile:list,p2_won_pile:list) :
+    len_p1 = len(p1_won_pile) 
+    len_p2 = len(p2_won_pile) 
+    if len_p1 > len_p2:
+        print("p1")
+    elif len_p2 > len_p1:
+        print("p2")
+    else:
+        
