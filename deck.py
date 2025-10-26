@@ -1,6 +1,5 @@
 optimal_suite = ["H","C","D","S"]
-def create_card(rank:str, suite:str) -> dict:
-    card = {"2":2,
+optimal_card = {"2":2,
             "3":3,
             "4":4,
             "5":5,
@@ -13,9 +12,11 @@ def create_card(rank:str, suite:str) -> dict:
             "Q":12,
             "K":13,
             "A":14}
-    if rank not in card or suite not in optimal_suite:
+def create_card(rank:str, suite:str) -> dict:
+    
+    if rank not in optimal_card or suite not in optimal_suite:
         return None
-    return {"rank":rank ,"suite":suite ,"value":card[rank]}
+    return {"rank":rank ,"suite":suite ,"value":optimal_card[rank]}
 
 def compare_cards(p1_card: dict, p2_card: dict) -> str:
     if "value" not in p1_card or "value" not in p2_card:
@@ -28,9 +29,11 @@ def compare_cards(p1_card: dict, p2_card: dict) -> str:
         return "WAR"
     
 def create_deck() -> list[dict]:
-    rank = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+    ranks = optimal_card
     all_card = []
-    for i in rank:
+    for i in ranks:
         for j in optimal_suite:
             all_card.append(create_card(i,j))
+    print(len(all_card))
     return all_card
+print(create_deck())
