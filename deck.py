@@ -31,9 +31,9 @@ def compare_cards(p1_card: dict, p2_card: dict) -> str:
 def create_deck() -> list[dict]:
     ranks = optimal_card
     all_card = []
-    for i in ranks:
-        for j in optimal_suite:
-            all_card.append(create_card(i,j))
+    for rank in ranks:
+        for suite in optimal_suite:
+            all_card.append(create_card(rank,suite))
     print(len(all_card))
     return all_card
 print(create_deck())
