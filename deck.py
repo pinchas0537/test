@@ -50,5 +50,3 @@ def shuffle (deck: list[dict]) -> list[dict]:
         deck[index2] = temp_card
         
     return deck
-print(shuffle(create_deck()))
-        
