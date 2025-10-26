@@ -1,3 +1,5 @@
+from random import randint
+
 optimal_suite = ["H","C","D","S"]
 optimal_card = {"2":2,
             "3":3,
@@ -34,6 +36,19 @@ def create_deck() -> list[dict]:
     for rank in ranks:
         for suite in optimal_suite:
             all_card.append(create_card(rank,suite))
-    print(len(all_card))
     return all_card
-print(create_deck())
+
+def shuffle (deck: list[dict]) -> list[dict]:
+    for i in range(1000):
+        index1 = randint(0,51)
+        index2 = randint(0,51)
+        while index1 == index2:
+             index2 = randint(0,51)
+        
+        temp_card = deck[index1]
+        deck[index1] = deck[index2]
+        deck[index2] = temp_card
+        
+    return deck
+print(shuffle(create_deck()))
+        
