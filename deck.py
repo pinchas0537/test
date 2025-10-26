@@ -50,3 +50,7 @@ def shuffle (deck: list[dict]) -> list[dict]:
         deck[index2] = temp_card
         
     return deck
+
+def create_player(name: str = "AI") -> dict:
+    
+    
