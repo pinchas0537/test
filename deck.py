@@ -51,38 +51,9 @@ def shuffle (deck: list[dict]) -> list[dict]:
     return deck
 
 def create_player(name: str = "AI") -> dict:
-    pass
-def init_game() -> dict:
-    player1 = create_player("m")
-    player2 = create_player()
-    deck = create_deck()
-    shuffle(deck)
-    player1[ "hand"]= deck[:26]
-    player2[ "hand"]= deck[26:]
+
     return{
-            "deck":deck
-            "player1":player1
-            "player2":player2
-        }
-    
-def play_round(player_1: dict, player_2: dict)-> None:
-    p1_card = player_1["hand"].pop()
-    p2_card = player_2["hand"].pop()
-    result_compare = compare_cards(p1_card,p2_card)
-    if result_compare =="p1":
-        player_1["won_pile"].append
-        
-if __name__ == "__main__":
-    game_dict = init_game()
-    while len(game_dict["player_1"]["hand"]) > 0 and len(game_dict["player_2"]["hand"]) > 0:
-        play_round(game_dict["player_1"],game_dict["playe   r_2"])
-        
-def return_winner(p1_won_pile:list,p2_won_pile:list) :
-    len_p1 = len(p1_won_pile) 
-    len_p2 = len(p2_won_pile) 
-    if len_p1 > len_p2:
-        print("p1")
-    elif len_p2 > len_p1:
-        print("p2")
-    else:
-        
+        "name":name,
+        "hand": [],
+        "won_pile":[]
+    }
