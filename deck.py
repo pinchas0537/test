@@ -57,6 +57,7 @@ def create_player(name: str = "AI") -> dict:
         "hand": [],
         "won_pile":[]
     }
+    
 def init_game() -> dict:
     player1 = create_player("m")
     player2 = create_player()
