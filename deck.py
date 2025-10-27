@@ -52,17 +52,21 @@ def shuffle (deck: list[dict]) -> list[dict]:
     return deck
 
 def create_player(name: str = "AI") -> dict:
-    pass
+    return{
+        "name":name,
+        "hand": [],
+        "won_pile":[]
+    }
 def init_game() -> dict:
     player1 = create_player("m")
     player2 = create_player()
     deck = create_deck()
     shuffle(deck)
-    player1[ "hand"]= deck[:26]
-    player2[ "hand"]= deck[26:]
+    player1[ "hand"] = deck[:26]
+    player2[ "hand"] = deck[26:]
     return{
-            "deck":deck
-            "player1":player1
-            "player2":player2
-        }
+        "deck":deck,
+        "player1":player1,
+        "player2":player2
+    }
     
